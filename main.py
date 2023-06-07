@@ -166,12 +166,12 @@ class NPC3(Character):
         book = Item("Книга", "Старинная книга заклинаний.")
         if book in player.inventory:
             player.location.characters.remove(npc3)
-            print("You have a book! I love reading. Thank you!")
+            print("У тебя есть книга! Я люблю заклинания. Спасибо!")
             print("Поздравляю! Вы прошли игру и победили!")  # Вывод сообщения о победе
         else:
-            print("You don't have anything to cheer me up.")
-            print("I challenge you to a game. I'm thinking of a number between 1 and 10.")
-            print("You have 3 attempts to guess the number. Good luck!")
+            print("У тебя нет ничего, что могло бы меня подбодрить. Я зол.")
+            print("Предлагаю тебе игру. Я загадываю число от 1 до 10.")
+            print("У тебя есть 3 попытки угадать его. Удачи!")
 
             number = random.randint(1, 10)
             attempts = 3
@@ -179,16 +179,16 @@ class NPC3(Character):
                 guess = int(input("Your guess: "))
                 if guess == number:
                     player.location.characters.remove(npc3)
-                    print("NPC3: Congratulations! You guessed it!")
+                    print("Поздравляю! Ты угадал!")
                     print("Поздравляю! Вы прошли игру и победили!")  # Вывод сообщения о победе
                     break  # Игра завершается, игрок победил
                 else:
-                    print("NPC3: That's not the number I'm thinking of.")
+                    print("Это не то число, которое я загадал.")
                     attempts -= 1
                     if attempts > 0:
                         print(f"NPC3: You have {attempts} attempts remaining.")
             else:
-                print("NPC3: You failed to guess the number. I win!")
+                print("Ты не отгадал число. Я выиграл!")
                 print("Игра окончена. Ты проиграл.")  # Вывод сообщения о проигрыше
 
 
@@ -196,9 +196,9 @@ class NPC3(Character):
 kitchen = Location("Кухня", "Маленькая и аккуратная кухня")
 bedroom = Location("Спальня", "Уютная спальня с большой кроватью.")
 garden = Location("Сад", "Через ворота виднеется красивый сад с прекрасными цветами.")
-hallway = Location("Hallway", "A long hallway connecting different rooms.")
-living_room = Location("Гостинная", "A spacious living room with comfortable furniture.")
-dining_room = Location("Столовая", "An elegant dining room with a large table.")
+hallway = Location("Hallway", "Длинный холл, соединяющий много комнат")
+living_room = Location("Гостинная", "Обычная гостинная")
+dining_room = Location("Столовая", "Тут стоит оггромный стол")
 
 # Создание персонажей
 player = Player("Игрок", "Игрок - это ты.", kitchen)
