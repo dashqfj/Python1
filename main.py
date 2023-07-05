@@ -161,8 +161,7 @@ class NPC2(Character):
 
 class NPC3(Character):
     def talk(self, player):
-        print("I'm feeling really down lately. I wish something could cheer me up.")
-
+        print("В последнее время я чувствую себя очень подавлено. Хотелось бы мне, чтобы что-нибудь могло меня подбодрить.")
         book = Item("Книга", "Старинная книга заклинаний.")
         if book in player.inventory:
             player.location.characters.remove(npc3)
@@ -186,7 +185,7 @@ class NPC3(Character):
                     print("Это не то число, которое я загадал.")
                     attempts -= 1
                     if attempts > 0:
-                        print(f"NPC3: You have {attempts} attempts remaining.")
+                        print(f"NPC3: У тебя осталось {attempts} попытки/а.")
             else:
                 print("Ты не отгадал число. Я выиграл!")
                 print("Игра окончена. Ты проиграл.")  # Вывод сообщения о проигрыше
