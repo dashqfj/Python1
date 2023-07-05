@@ -162,8 +162,8 @@ class NPC2(Character):
 class NPC3(Character):
     def talk(self, player):
         print("В последнее время я чувствую себя очень подавлено. Хотелось бы мне, чтобы что-нибудь могло меня подбодрить.")
-        book = Item("Книга", "Старинная книга заклинаний.")
-        if book in player.inventory:
+        book_found = any(isinstance(item, Item) and item.name == "Книга" for item in player.inventory)
+        if book_found:
             player.location.characters.remove(npc3)
             print("У тебя есть книга! Я люблю заклинания. Спасибо!")
             print("Поздравляю! Вы прошли игру и победили!")  # Вывод сообщения о победе
